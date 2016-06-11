@@ -2,7 +2,9 @@ import numpy as np
 import math as mt
 import matplotlib.pyplot as plt
 
-size=100;maxTime=347
+ size=100;maxTime=347
+ -#for size=100 use time 1048
+ -#size=1000;maxTime=1048
 ez=np.zeros((size))
 hy=np.zeros((size))
 ez_snap=np.zeros((maxTime))
