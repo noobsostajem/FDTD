@@ -3,7 +3,7 @@ import math as mt
 import matplotlib.pyplot as plt
 plt.ion()
 
-size=1000;maxTime=500
+size=1000;maxTime=2000
 ez=np.zeros((size))
 hy=np.zeros((size))
 ez_snap=np.zeros((maxTime))
@@ -11,7 +11,7 @@ hy_snap=np.zeros((maxTime))
 imp0=377.0
 snap_moment=size/2-1
 ABC_CELLS=5
-eps=4
+eps=1
 
 source_width = 5.0
 delay = 10*source_width
