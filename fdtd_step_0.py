@@ -2,9 +2,11 @@ import numpy as np
 import math as mt
 import matplotlib.pyplot as plt
 
- size=100;maxTime=347
- -#for size=100 use time 347
- -#size=1000;maxTime=1048
+size=1000;
+maxTime=1048;
+
+#size=1000;maxTime=1048
+
 ez=np.zeros((size))
 hy=np.zeros((size))
 ez_snap=np.zeros((maxTime))
@@ -18,7 +20,7 @@ delay = 10*source_width
 i=0
 
 for qtime in np.arange(0,maxTime+1,1):
-    print(qtime)
+    
     ez[size/2-1] += 0.5*mt.exp(-(qtime-delay) ** 2 / (2.0 * source_width**2));
 
     for mm in range(0,size-1):
@@ -31,21 +33,22 @@ for qtime in np.arange(0,maxTime+1,1):
 
 fig = plt.figure()
 
-plt.subplot(2, 1, 1)
+plt.subplot(3, 1, 1)
 plt.plot(range(0,size,1),ez,'-')
 plt.plot(range(0,size,1),hy*imp0,'-')
 plt.ylabel('Ez-field, V/m')
 plt.xlabel('Spatial')
+plt.show()
 
 #Ez (Spatial)
-#plt.subplot(2, 1, 2)
-#plt.plot(range(0,size,1),ez,'-')
-#plt.ylabel('Ez-field, V/m')
-#plt.xlabel('Spatial')
-#plt.show()
+plt.subplot(3, 1, 2)
+plt.plot(range(0,size,1),ez,'-')
+plt.ylabel('Ez-field, V/m')
+plt.xlabel('Spatial')
+plt.show()
 
 #Ez (Time)
-plt.subplot(2, 1, 2)
+plt.subplot(3, 1, 3)
 plt.plot(range(0,maxTime,1),ez_snap,'-')
 plt.ylabel('Ez-field, V/m')
 plt.xlabel('Time')
