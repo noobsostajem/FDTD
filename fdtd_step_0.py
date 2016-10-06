@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 size=1000;
 maxTime=1048;
 
-#size=1000;maxTime=1048
+#size=100;maxTime=347
 
 ez=np.zeros((size))
 hy=np.zeros((size))
